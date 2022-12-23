@@ -16,7 +16,8 @@ allVar.Form.addEventListener('submit', async (e) => {
     body: JSON.stringify(userObj),
   };
 
-  await fetch(allVar.BASE_URL, postRequest).then((res) => res.json()).then((json) => console.log('data', json));
+  await fetch(allVar.BASE_URL, postRequest).then((res) => res.json())
+    .then(() => window.location.reload());
 });
 
 const showList = (data) => {
