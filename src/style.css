@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: rgb(247, 228, 228);
 }
 
 header {
@@ -40,10 +40,23 @@ header nav {
   gap: 20px;
 }
 
+button {
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.borad-header button {
+  background-color: rgb(173, 63, 100);
+}
+
 .infos {
   display: flex;
   flex-direction: column;
-  border: solid black 2px;
   margin-top: 40px;
 }
 
@@ -61,28 +74,30 @@ header nav {
 
 .info {
   font-weight: bold;
-  padding: 5px;
+  padding: 10px 5px;
 }
 
 .info:nth-child(even) {
-  background: rgb(161, 160, 160);
+  background: rgb(194, 192, 192);
+}
+
+.info:nth-child(odd) {
+  background: rgb(248, 246, 246);
 }
 
 .input input {
-  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: none;
   width: 300px;
-  padding-left: 20px;
+  padding: 15px 20px;
   border-radius: 5px;
 }
 
 .submit {
-  width: 50%;
   margin-left: 50%;
+  background-color: rgb(73, 73, 143);
 }
 
-button {
-  width: 80px;
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 5px;
+button:hover {
+  padding: 10px 15px;
 }
