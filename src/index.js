@@ -1,10 +1,33 @@
 import './style.css';
+import * as allVar from './modules/Variables.js';
 
-const element = document.querySelector('.infos');
-element.innerHTML = `
-  <div class="Wrapper">
-    <p class='score'><b>Name : 100</b></p>
-    <p class='score'><b>Name : 80</b></p>
-    <p class='score'><b>Name : 90</b></p>
-  </div>
-`;
+allVar.Form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const userObj = {
+    user: e.target.user.value,
+    score: e.target.score.value,
+  };
+
+  const postRequest = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userObj),
+  };
+
+  await fetch(allVar.BASE_URL, postRequest).then((res) => res.json())
+    .then(() => window.location.reload());
+});
+
+const showList = (data) => {
+  allVar.List.innerHTML += `<p class="info">${data.user} : ${data.score} </p>`;
+};
+
+fetch(allVar.BASE_URL)
+  .then((res) => res.json())
+  .then((data) => data.result.map((resp) => showList(resp)));
+
+allVar.Refresh.addEventListener('click', () => {
+  window.location.reload();
+});
