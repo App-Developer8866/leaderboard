@@ -40,6 +40,16 @@ header nav {
   gap: 20px;
 }
 
+button {
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 .borad-header button {
   background-color: rgb(173, 63, 100);
 }
@@ -86,16 +96,6 @@ header nav {
 .submit {
   margin-left: 50%;
   background-color: rgb(73, 73, 143);
-}
-
-button {
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
